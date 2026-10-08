@@ -10,6 +10,7 @@ Marketing site for **Optimyst**, a fictional field-service software company used
 | `favicon.svg` | The gauge mark |
 | `assets/logos/` | Gauge mark and horizontal lockup, light and dark |
 | `.nojekyll` | Tells GitHub Pages to serve the files as they are |
+| `CNAME` | Points the site at optimyst.au |
 
 Fonts load from Google Fonts (Bricolage Grotesque, IBM Plex Sans, IBM Plex Mono). Everything else is inline.
 
@@ -18,9 +19,21 @@ Fonts load from Google Fonts (Bricolage Grotesque, IBM Plex Sans, IBM Plex Mono)
 1. Push this repository to GitHub.
 2. In the repository, go to **Settings → Pages**.
 3. Under **Build and deployment**, set **Source** to **Deploy from a branch**, pick `main` and `/ (root)`, then **Save**.
-4. The site appears at `https://<your-username>.github.io/<repo-name>/` within a minute or two.
+4. The site is served at **https://optimyst.au** once DNS points at GitHub Pages (below).
 
-To use your own domain, add it under **Settings → Pages → Custom domain**. GitHub creates the `CNAME` file for you.
+### DNS for optimyst.au
+
+At the domain's DNS host, add:
+
+| Type | Name | Value |
+| --- | --- | --- |
+| A | @ | 185.199.108.153 |
+| A | @ | 185.199.109.153 |
+| A | @ | 185.199.110.153 |
+| A | @ | 185.199.111.153 |
+| CNAME | www | arbitrco.github.io |
+
+Then tick **Enforce HTTPS** under **Settings → Pages** once the certificate is issued.
 
 ## Editing
 
